@@ -22,7 +22,7 @@ class ModeloPacientes{
 
         $result = ModeloPacientes::mdlConsultarSiCedulaExiste($cedula, $tabla);   
         
-        if($result == "success"){
+        if($result == false){
            
 
             if(is_array($datos) || is_object($datos)){                      
@@ -78,14 +78,14 @@ class ModeloPacientes{
 
         $result = ModeloPacientes::query($query);
 
-        //var_dump($result) ;
-
-        if($result == $cedula){
+        var_dump($result) ;
+        $respuesta = false;
+        if($result){
             echo "<script>alert('Este paciente ya existe en la base de datos')</script>";
-            $respuesta = "error";
+            $respuesta = true;
         } else {
             echo "<script>alert('El paciente fue registrado correctamente')</script>";
-            $respuesta = "success";
+            $respuesta = false;
         }
 
         return $respuesta;
