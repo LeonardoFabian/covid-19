@@ -64,7 +64,7 @@ class ModeloPacientes{
         $anio = date('Y');
         $mes = date('m');
         $dia = date('d');
-        $hoy = $dia - 1;
+        $hoy = $dia;
 
         $fechaActual = "{$anio}-{$mes}-{$hoy} 00:00:00.000";
 
